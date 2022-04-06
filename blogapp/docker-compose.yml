@@ -1,0 +1,10 @@
+version: '3'
+services:
+  vue:
+    build: .
+    ports:
+      - "7000:7000"
+    container_name: vue-ui
+    volumes:
+       - "/app/node_modules"
+       - ".:/app"
