@@ -1,15 +1,34 @@
 <template>
+  <Header v-bind:titleHeader="title"/>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ListProduct v-bind:listProduct="listProduct"/>
+  <Footer/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ListProduct from './components/ListProducts.vue'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Footer,
+    ListProduct
+  },
+  data (){
+    return {
+      title: "Hello This is header",
+      listProduct:[
+        {id:1, name: 'book', active:true},
+        {id:2, name: 'table', active:true},
+        {id:3, name: 'pen', active:true},
+        {id:4, name: 'mouse', active:false},
+        {id:5, name: 'phone', active:true},
+        {id:6, name: 'bottle', active:false},
+      ]
+    }
   }
 }
 </script>
